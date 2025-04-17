@@ -6,24 +6,22 @@ import { FormsModule } from '@angular/forms';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostsService } from './services/posts.service';
-// { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    // Remove standalone components from declarations
   ],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
     FormsModule,
-    // Add standalone components to imports instead
     PostListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    SharedModule
   ],
   providers: [PostsService],
   exports: [
-    // You can export imported components
     PostListComponent,
     PostDetailComponent
   ]

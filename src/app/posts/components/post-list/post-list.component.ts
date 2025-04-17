@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../../services/posts.service';
-import { Post } from '../../models/post-model';
 import { catchError, finalize, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
+//Models
+import { Post } from '../../models/post-model';
+
+//Services
+import { PostsService } from '../../services/posts.service';
+
+//Shared
 import { LoadingSpinnerComponent } from '../../../shared/components/loading-spinner/loading-spinner.component';
 import { ErrorMessageComponent } from '../../../shared/components/error-message/error-message.component';
 
@@ -16,6 +22,7 @@ import { ErrorMessageComponent } from '../../../shared/components/error-message/
   imports: [CommonModule, RouterLink, FormsModule, LoadingSpinnerComponent, ErrorMessageComponent]
 })
 export class PostListComponent implements OnInit {
+  // Inicializacion de propiedades
   posts: Post[] = [];
   loading = false;
   error = false;

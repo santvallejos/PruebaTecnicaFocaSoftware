@@ -1,8 +1,10 @@
 <div class="post-detail-container">
     <a routerLink="/posts" class="back-link">← Back to Posts</a>
 
+    <!-- spiner de carga -->
     <app-loading-spinner *ngIf="loading"></app-loading-spinner>
   
+    <!-- Manejo de errores -->
     <app-error-message 
       *ngIf="error" 
       [message]="errorMessage"
@@ -14,7 +16,8 @@
       
       <div class="comments-section">
         <h2>Comments</h2>
-        
+
+        <!-- Si la longitud de los comentarios es igual a 0, notifica que no hay comentarios -->
         <div *ngIf="comments.length === 0" class="no-comments">
           No comments available for this post.
         </div>

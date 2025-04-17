@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { catchError, finalize, forkJoin, of } from 'rxjs';
+
+//Services
 import { PostsService } from '../../services/posts.service';
+
+//Models
 import { Post } from '../../models/post-model';
 import { Comment } from '../../models/comment-model';
-import { catchError, finalize, forkJoin, of } from 'rxjs';
+
+//shareds
 import { LoadingSpinnerComponent } from '../../../shared/components/loading-spinner/loading-spinner.component';
 import { ErrorMessageComponent } from '../../../shared/components/error-message/error-message.component';
 

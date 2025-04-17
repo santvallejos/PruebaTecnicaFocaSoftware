@@ -18,43 +18,56 @@ La aplicación permite a los usuarios:
 
 ## Estructura del proyecto
 
-src/
-├── app/
-│   ├── environment/
-│   │   └── environment.ts
-│   ├── posts/
-│   │   ├── components/
-│   │   │   ├── post-list/
-│   │   │   └── post-detail/
-│   │   ├── models/
-│   │   │   ├── post-model.ts
-│   │   │   └── comment-model.ts
-│   │   ├── services/
-│   │   │   └── posts.service.ts
-│   │   └── posts.module.ts
-│   ├── shared/
-│   │   ├── components/
-│   │   │   ├── error-message/
-│   │   │   └── loading-spinner/
-│   │   └── shared.module.ts
-│   ├── app.component.ts
-│   ├── app.component.html
-│   ├── app.component.css
-│   ├── app.module.ts
-│   └── app.routes.ts
-└── main.ts
+    PruebaTecnicaFocaSoftware/
+    ├── .angular
+    ├── node_modules
+    ├── public
+    ├── src
+    │   ├── app
+    │   │   ├── environment
+    │   │   │   └── environment
+    │   │   ├── posts
+    │   │   │   ├── components
+    │   │   │   │   ├── post-detail
+    │   │   │   │   └── post-list
+    │   │   │   ├── models
+    │   │   │   │   ├── comment
+    │   │   │   │   └── post
+    │   │   │   ├── services
+    │   │   │   │   ├── posts.service.spec
+    │   │   │   │   └── posts.service
+    │   │   │   └── posts.module
+    │   │   ├── shared
+    │   │   │   ├── components
+    │   │   │   │   ├── error-message
+    │   │   │   │   └── loading-spinner
+    │   │   │   └── shared.module  
+    │   │   ├── app.componentcss
+    │   │   ├── app.component.html
+    │   │   ├── app.component.spec.ts
+    │   │   ├── app.component.ts
+    │   │   ├── app.configts
+    │   │   ├── app.module.ts
+    │   │   └── app.routing.ts
+    │   ├── index.html
+    │   ├── main.ts
+    │   └── styles.css  
+    │
+    ├── angular.json
+    ├── package-lock.json
+    └── package.json
 
 
 ## Instalación
 
 1. Clona este repositorio
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/santvallejos/PruebaTecnicaFocaSoftware.git
 ```
 
 2. Instala las dependencias
 ```bash
-cd <nombre-del-proyecto>
+cd PruebaTecnicaFocaSoftware
 npm install
 ```
 
@@ -62,3 +75,8 @@ npm install
 ```bash
 ng serve
 ```
+
+## Autor
+
+[![LinkedIn Follow](https://img.icons8.com/?size=50&id=447&format=png&color=000000)](https://www.linkedin.com/in/santiago-vallejos-97a933236/)
+[![Github](https://img.icons8.com/?size=50&id=62856&format=png&color=000000)](https://github.com/santvallejos)

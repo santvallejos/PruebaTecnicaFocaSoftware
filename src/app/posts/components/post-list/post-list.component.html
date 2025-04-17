@@ -5,10 +5,13 @@
         <input type="text" placeholder="Search posts..." [(ngModel)]="searchTerm" class="search-input">
     </div>
 
+    <!-- Spinner de cargar para los post -->
     <app-loading-spinner *ngIf="loading"></app-loading-spinner>
 
+    <!-- Manego de errores -->
     <app-error-message *ngIf="error" [message]="errorMessage"></app-error-message>
 
+    <!-- Lista de post -->
     <div class="posts-list" *ngIf="!loading && !error">
         <div *ngIf="filteredPosts.length === 0" class="no-results">
             No posts found matching your search.
