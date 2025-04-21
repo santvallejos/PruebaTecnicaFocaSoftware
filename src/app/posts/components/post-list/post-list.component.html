@@ -2,17 +2,23 @@
     <h1>Posts</h1>
 
     <div class="search-container">
-        <input type="text" placeholder="Search posts..." [(ngModel)]="searchTerm" class="search-input">
+        <input type="text" placeholder="Search posts..." [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" class="search-input">
     </div>
 
-    <!-- Spinner de cargar para los post -->
-    <app-loading-spinner *ngIf="loading"></app-loading-spinner>
+    <!-- Spinner de carga para los posts iniciales -->
+    <app-loading-spinner *ngIf="loading && displayedPosts.length === 0"></app-loading-spinner>
 
-    <!-- Manego de errores -->
+    <!-- Manejo de errores -->
     <app-error-message *ngIf="error" [message]="errorMessage"></app-error-message>
 
-    <!-- Lista de post -->
-    <div class="posts-list" *ngIf="!loading && !error">
+    <!-- Lista de posts -->
+    <div class="posts-list" 
+         *ngIf="!loading || displayedPosts.length > 0" 
+         infiniteScroll 
+         [infiniteScrollDistance]="2"
+         [infiniteScrollThrottle]="150" 
+         (scrolled)="onScroll()">
+        
         <div *ngIf="filteredPosts.length === 0" class="no-results">
             No posts found matching your search.
         </div>
@@ -21,6 +27,17 @@
             <h2 class="post-title">{{ post.title }}</h2>
             <p class="post-body">{{ post.body }}</p>
             <a [routerLink]="['/posts', post.id]" class="view-details-btn">View Details</a>
+        </div>
+        
+        <!-- Indicador de carga al final de la lista -->
+        <div *ngIf="loadingMore && !error" class="loading-more">
+            <app-loading-spinner></app-loading-spinner>
+            <p>Cargando más posts...</p>
+        </div>
+        
+        <!-- Mensaje cuando se han cargado todos los posts -->
+        <div *ngIf="allPostsLoaded && filteredPosts.length > 0 && !loadingMore" class="all-loaded">
+            No hay más posts para mostrar.
         </div>
     </div>
 </div>

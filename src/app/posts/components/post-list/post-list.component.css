@@ -58,3 +58,23 @@
     padding: 20px;
     color: #666;
   }
+  
+  .loading-more {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    color: #666;
+  }
+  
+  .all-loaded {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+  }
+  
+  /* Aseguramos que el contenedor tenga suficiente altura para permitir el scroll */
+  .posts-container {
+    min-height: 100vh;
+  }

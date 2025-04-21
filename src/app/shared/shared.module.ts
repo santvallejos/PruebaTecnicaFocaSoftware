@@ -4,9 +4,6 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 @NgModule({
-  declarations: [
-
-  ],
   imports: [
     CommonModule,
     LoadingSpinnerComponent,
