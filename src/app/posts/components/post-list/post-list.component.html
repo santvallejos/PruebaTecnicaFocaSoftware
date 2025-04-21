@@ -18,10 +18,6 @@
          [infiniteScrollDistance]="2"
          [infiniteScrollThrottle]="150" 
          (scrolled)="onScroll()">
-        
-        <div *ngIf="filteredPosts.length === 0" class="no-results">
-            No posts found matching your search.
-        </div>
 
         <div *ngFor="let post of filteredPosts" class="post-card">
             <h2 class="post-title">{{ post.title }}</h2>
