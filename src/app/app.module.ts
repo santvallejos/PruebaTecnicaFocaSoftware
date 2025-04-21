@@ -11,13 +11,14 @@ import { PostsModule } from './posts/posts.module';
 @NgModule({
   declarations: [
   ],
+  // Nada mas importamos el módulo de posts
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
     PostsModule,
-    AppComponent, 
+    AppComponent,
   ],
   providers: [],
   bootstrap: []
